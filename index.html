@@ -1,0 +1,147 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Heylex.us Remote</title>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" media="screen,projection">
+    <style>
+    body {
+        margin-bottom: 65px;
+    }
+    .small-margins {
+        margin: 0 auto 15px auto;
+    }
+    footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 1000;
+    }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="blue-grey darken-3 grey-text">
+
+    <nav class="blue-grey darken-4" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Heylex.us</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="section">
+<div class="row">
+    <div class="col s12">
+
+      <h4 class="small-margins center white-text">Control</h2>
+
+      
+    </div>
+        <div class="col m4 offset-m4 s12 center-align">
+          <!--<div class="icon-block center">-->
+            
+            <br>
+            <h5 class="small-margins center">Engine Management <span class="blue-text text-darken-1"><i class="material-icons">flash_on</i></span></h5>
+            <button class="waves-effect waves-light orange darken-2 btn-large rs-action" data-button-action="toggle-engine"><i class="material-icons left">power_settings_new</i>Start</button>
+            
+            <br>
+            <br>
+            <br>
+
+            <h5 class="small-margins center">Locks <span class="blue-text text-darken-1"><i class="material-icons">lock</i></span></h5>
+            
+            <button class="waves-effect waves-light light-blue darken-4 btn-large rs-action" data-button-action="unlock-doors"><i class="material-icons left">lock_open</i> Unlock</button>
+            <button class="waves-effect waves-light green darken-3 btn-large rs-action" data-button-action="lock-doors"><i class="material-icons left">lock_outline</i> Lock</button>
+
+
+            <!--<h2 class="center blue-text text-darken-1"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+
+            <button class="waves-effect waves-light light-blue darken-4 btn-large"><i class="material-icons left">lock_open</i> Unlock</button>
+            <button class="waves-effect waves-light green darken-3 btn-large"><i class="material-icons left">lock_outline</i> Lock</button>-->
+
+          </div>
+        </div>
+      <!--</div>-->
+
+
+        </div>
+
+
+<div class="row">
+    <div class="col s12">
+
+      <h4 class="small-margins center white-text">Status</h4>
+      </div>
+</div>
+
+<div class="row">
+        <div class="col m4 offset-m4 s12 center-align">
+<table class="centered">
+        <thead>
+          <tr>
+              <th>System</th>
+              <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Battery</td>
+            <td>12.6V</td>
+          </tr>
+          <tr>
+            <td>Cabin Temp</td>
+            <td>68&deg;F</td>
+          </tr>
+          <tr>
+            <td>Outside Temp</td>
+            <td>98&deg;F</td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>40.9601245, -112.3538223</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+      
+    </div>
+    </div>
+
+
+
+<footer class="page-footer blue darken-1">
+    <div class="footer-copyright">
+      <div class="container">
+      Made w/ &lt;3 in Salt Lake City by <a class="blue-text text-darken-4" href="https://twitter.com/parrotmac">@parrotmac</a>
+      </div>
+    </div>
+  </footer>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/scripts/main.js"></script>
+    <script>
+        $(".rs-action").click(function() {
+            var buttonAction = $(this)[0].dataset.buttonAction;
+            switch(buttonAction) {
+                case 'toggle-engine':
+                    RS.remoteStartOn();
+                break;
+                case 'unlock-doors':
+                    RS.remoteStartUnlock();
+                break;
+                case 'lock-doors':
+                    RS.remoteStartLock();
+                break;
+            }
+        })
+    </script>
+</body>
+</html>
