@@ -1,0 +1,24 @@
+{
+  "name": "heylex.us-remote",
+  "version": "1.0.0",
+  "description": "Remote Control For Heylex.us Project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parrotmac/heylex.us-remote.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parrotmac/heylex.us-remote/issues"
+  },
+  "homepage": "https://github.com/parrotmac/heylex.us-remote#readme"
+}
