@@ -20,6 +20,11 @@ io.on('connection', function (socket) {
     io.emit('lex-command', data);
   });
 
+
+  socket.on('lex-confirm', function (data) {
+    io.emit('client-notify', data);
+  });
+
   socket.on('lex-request', function (data) {
     io.emit('client-command', data);
   });

@@ -104,6 +104,12 @@ socket.on('connect', function(){
         console.log("Annyang initialized");
     }
 });
+
+
+socket.on('client-notify', function(data){
+    Materialize.toast("Confirmed action " + data.action, 1000);
+});
+
 socket.on('client-command', function(data){
     console.log("We're supposed to ", data);
 });
