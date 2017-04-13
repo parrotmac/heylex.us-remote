@@ -53,6 +53,8 @@
             
             <button class="waves-effect waves-light light-blue darken-4 btn-large rs-action" data-button-action="unlock-doors"><i class="material-icons left">lock_open</i> Unlock</button>
             <button class="waves-effect waves-light green darken-3 btn-large rs-action" data-button-action="lock-doors"><i class="material-icons left">lock_outline</i> Lock</button>
+            <br>
+            <button class="waves-effect waves-light green darken-3 btn-large rs-action" data-button-action="pop-trunk"><i class="material-icons left">lock_outline</i> Trunk Pop</button>
 
 
             <!--<h2 class="center blue-text text-darken-1"><i class="material-icons">settings</i></h2>
@@ -82,7 +84,6 @@
 <table class="centered">
         <thead>
           <tr>
-              <th>System</th>
               <th>Status</th>
           </tr>
         </thead>
@@ -139,6 +140,9 @@
                 break;
                 case 'lock-doors':
                     RS.remoteStartLock();
+                break;
+                case 'pop-trunk':
+                    RS.remoteStartTrunk();
                 break;
             }
         })

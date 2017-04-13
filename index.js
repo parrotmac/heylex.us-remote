@@ -22,8 +22,13 @@ io.on('connection', function (socket) {
 
 
   socket.on('lex-confirm', function (data) {
-    io.emit('client-notify', data);
+    io.emit('client-notify-confirm', data);
   });
+
+    socket.on('lex-error', function (data) {
+    io.emit('client-notify-error', data);
+  });
+
 
   socket.on('lex-request', function (data) {
     io.emit('client-command', data);

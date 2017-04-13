@@ -106,8 +106,13 @@ socket.on('connect', function(){
 });
 
 
-socket.on('client-notify', function(data){
+socket.on('client-notify-confirm', function(data){
     Materialize.toast("Confirmed action " + data.action, 1000);
+});
+
+
+socket.on('client-notify-error', function(data){
+    Materialize.toast("Action " + data.requestedAction + " failed. (Error: " + data.reason + ")", 5000);
 });
 
 socket.on('client-command', function(data){
