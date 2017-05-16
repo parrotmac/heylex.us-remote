@@ -34,6 +34,9 @@ var RS = {
     remoteStartParty: function() {
         sendRequest("remote-start:party");
     },
+    remoteStartFastHonk: function() {
+        sendRequest("remote-start:fast-honk");
+    },
 }
                                   
 var initAnnyang = function() {
@@ -89,7 +92,7 @@ var initAnnyang = function() {
         annyang.addCommands(annyangCommands);
 
         // Start listening. You can call this here, or attach this call to an event, button, etc.
-        annyang.start();
+        // annyang.start();
     }
 
     annyang.addCallback('error', function () {
@@ -106,13 +109,8 @@ socket.on('connect', function(){
 });
 
 
-socket.on('client-notify-confirm', function(data){
+socket.on('client-notify', function(data){
     Materialize.toast("Confirmed action " + data.action, 1000);
-});
-
-
-socket.on('client-notify-error', function(data){
-    Materialize.toast("Action " + data.requestedAction + " failed. (Error: " + data.reason + ")", 5000);
 });
 
 socket.on('client-command', function(data){

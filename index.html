@@ -56,6 +56,9 @@
             <br>
             <br>
             <button class="waves-effect waves-light red darken-3 btn-large rs-action" data-button-action="pop-trunk"><i class="material-icons left">vpn_key</i> Trunk Pop</button>
+            <hr>
+
+            <button class="waves-effect waves-light red darken-3 btn-large rs-action" data-button-action="fast-honk"><i class="material-icons left">lock_outline</i> Fast Honk</button>
 
 
             <!--<h2 class="center blue-text text-darken-1"><i class="material-icons">settings</i></h2>
@@ -144,6 +147,9 @@
                 break;
                 case 'pop-trunk':
                     RS.remoteStartTrunk();
+                break;
+                case 'fast-honk':
+                    RS.remoteStartFastHonk();
                 break;
             }
         })
